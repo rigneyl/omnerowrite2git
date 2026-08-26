@@ -1,4 +1,4 @@
-const CACHE = 'omnero-write-web-0.2.7';
+const CACHE = 'omnero-write-web-0.2.12';
 const BASE = new URL('./', self.registration.scope).pathname.replace(/\/$/, '');
 const withinBase = path => `${BASE}${path}`;
 const SHELL = [
