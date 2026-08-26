@@ -1,0 +1,1 @@
+{"name":"Omnero Write","short_name":"Omnero","description":"A quiet place to write.","start_url":"./App/","scope":"./","display":"standalone","orientation":"any","background_color":"#f4f1e8","theme_color":"#f4f1e8","icons":[{"src":"./icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
