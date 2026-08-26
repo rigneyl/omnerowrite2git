@@ -1,1 +1,0 @@
-# omnerowrite2git
