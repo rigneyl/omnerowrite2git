@@ -1,5 +1,5 @@
 /* global window */
-// Stripe-hosted Payment Links. Configure their post-payment redirect to /Support/Thanks/.
+// Stripe-hosted Payment Links. Configure their post-payment redirect to /support/thanks/.
 window.OMNERO_STRIPE_LINKS = {
   aud5: 'https://buy.stripe.com/eVqcN6c6x0EKfxS3Omgfu01',
   aud10: 'https://buy.stripe.com/5kQcN6daB1IObhC5Wugfu02',

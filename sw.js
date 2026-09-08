@@ -1,12 +1,10 @@
-const CACHE = 'omnero-write-web-0.2.12';
-const BASE = new URL('./', self.registration.scope).pathname.replace(/\/$/, '');
-const withinBase = path => `${BASE}${path}`;
+const CACHE = 'omnero-write-web-0.2.13';
 const SHELL = [
-  '/', '/index.html', '/App/', '/App/index.html', '/Support/', '/Support/index.html',
-  '/Support/Thanks/', '/Support/Thanks/index.html',
+  '/', '/index.html', '/app/', '/app/index.html', '/support/', '/support/index.html',
+  '/support/thanks/', '/support/thanks/index.html', '/404.html',
   '/assets/app.js', '/assets/app.css', '/manifest.webmanifest', '/icons/icon.svg',
   '/stripe-links.js',
-].map(withinBase);
+];
 
 self.addEventListener('install', event => event.waitUntil(
   caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()),
@@ -26,13 +24,13 @@ self.addEventListener('fetch', event => {
 
   let fallback = request;
   if (request.mode === 'navigate') {
-    fallback = url.pathname.startsWith(withinBase('/App/'))
-      ? withinBase('/App/index.html')
-      : url.pathname.startsWith(withinBase('/Support/Thanks/'))
-        ? withinBase('/Support/Thanks/index.html')
-        : url.pathname.startsWith(withinBase('/Support/'))
-          ? withinBase('/Support/index.html')
-          : withinBase('/index.html');
+    fallback = url.pathname.startsWith('/app/')
+      ? '/app/index.html'
+      : url.pathname.startsWith('/support/thanks/')
+        ? '/support/thanks/index.html'
+        : url.pathname.startsWith('/support/')
+          ? '/support/index.html'
+          : '/index.html';
   }
 
   event.respondWith(fetch(request).then(response => {
